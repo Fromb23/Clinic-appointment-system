@@ -8,7 +8,8 @@ namespace ClinicAppointmentSystem.Models
         public DateTime AppointmentDate { get; set; }
         public int PatientId { get; set; }
         public required Patient Patient { get; set; }
-        public int DoctorId { get; set; }
-        public required Doctor Doctor { get; set; }
+        public int? DoctorId { get; set; }  // Nullable DoctorId in case no preferred doctor is chosen
+        public Doctor? Doctor { get; set; }  // Nullable Doctor for preferred doctor
+        public required string PurposeOfAppointment { get; set; }
     }
 }

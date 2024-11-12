@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ClinicAppointmentSystemFrontend/1.0.0": {
+        "runtime": {
+          "ClinicAppointmentSystemFrontend.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ClinicAppointmentSystemFrontend/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

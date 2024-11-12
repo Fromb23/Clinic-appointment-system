@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\bin\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.exe
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\bin\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.deps.json
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\bin\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.runtimeconfig.json
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\bin\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.dll
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\bin\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.pdb
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\obj\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\obj\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\obj\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.AssemblyInfo.cs
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\obj\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\obj\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.sourcelink.json
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\obj\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.dll
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\obj\Debug\net8.0-windows\refint\ClinicAppointmentSystemFrontend.dll
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\obj\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.pdb
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\obj\Debug\net8.0-windows\ClinicAppointmentSystemFrontend.genruntimeconfig.cache
+C:\Users\User\Desktop\Clinic-appointment-system\ClinicAppointmentSystemFrontend\obj\Debug\net8.0-windows\ref\ClinicAppointmentSystemFrontend.dll

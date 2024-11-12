@@ -12,7 +12,7 @@ namespace ClinicAppointmentSystem
             // Set up dependency injection for the DbContext
             var serviceProvider = new ServiceCollection()
                 .AddDbContext<ClinicDbContext>(options =>
-                    options.UseNpgsql("Host=localhost;Database=clinicdb;Username=your_username;Password=your_password"))
+                    options.UseNpgsql("Host=localhost;Database=clinicdb;Username=fromb;Password=fromb123"))
                 .BuildServiceProvider();
 
             // Initialize the database context and perform any necessary operations
@@ -29,9 +29,13 @@ namespace ClinicAppointmentSystem
                     Console.WriteLine("Error connecting to the database: " + ex.Message);
                 }
             }
-
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
+            // Only read a key if a console is available
+            if (Console.IsOutputRedirected == false)
+            {
+                Console.WriteLine("Press any key to exit.");
+                Console.ReadKey();
+            }
+            
         }
     }
 }
