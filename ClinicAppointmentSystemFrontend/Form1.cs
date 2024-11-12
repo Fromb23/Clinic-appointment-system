@@ -17,20 +17,16 @@ namespace ClinicAppointmentSystemFrontend
         {
             // Set form properties (title, size, start position, background color)
 
-            // Title Label
-            InitializeTitleLabel(); // Adds the title label to the form
+            InitializeTitleLabel();
 
-            // Sidebar Panel
-            InitializeSidebar(); // Adds sidebar panel and buttons to the form
+            InitializeSidebar();
 
-            // Content Panel
-            InitializeContentPanel(); // Sets up the main content area with a description label
+            InitializeContentPanel();
 
-            // Footer
-            InitializeFooter(); // Adds a footer label to the form
+            InitializeFooter();
         }
 
-        // InitializeTitleLabel: Adds a label at the top of the form as the title
+        // InitializeTitleLabel:
         private void InitializeTitleLabel()
         {
             Label titleLabel = new Label
