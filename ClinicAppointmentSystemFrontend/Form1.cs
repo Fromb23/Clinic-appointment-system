@@ -36,7 +36,8 @@ namespace ClinicAppointmentSystemFrontend
                 ForeColor = Color.DarkSlateBlue,
                 TextAlign = ContentAlignment.MiddleCenter,
                 Dock = DockStyle.Top,
-                Height = 60
+                Height = 60,
+                Cursor = Cursors.Hand
             };
             titleLabel.Click += (sender, e) => ReloadDescription(); // Reload the description when clicked
             this.Controls.Add(titleLabel);
@@ -130,7 +131,8 @@ namespace ClinicAppointmentSystemFrontend
                 ForeColor = Color.Gray,
                 TextAlign = ContentAlignment.MiddleCenter,
                 Dock = DockStyle.Bottom,
-                Height = 30
+                Height = 30,
+                Cursor = Cursors.Hand
             };
             this.Controls.Add(footerLabel);
         }
