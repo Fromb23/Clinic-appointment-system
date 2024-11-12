@@ -38,6 +38,7 @@ namespace ClinicAppointmentSystemFrontend
                 Dock = DockStyle.Top,
                 Height = 60
             };
+            titleLabel.Click += (sender, e) => ReloadDescription(); // Reload the description when clicked
             this.Controls.Add(titleLabel);
         }
 
@@ -57,6 +58,11 @@ namespace ClinicAppointmentSystemFrontend
             Button btnDoctors = CreateSidebarButton("Doctors", 80);
             Button btnAppointments = CreateSidebarButton("Appointments", 140);
 
+            // Attach event handlers to buttons
+            btnPatients.Click += (sender, e) => ShowPatientsDescription();
+            btnDoctors.Click += (sender, e) => ShowDoctorsDescription();
+            btnAppointments.Click += (sender, e) => ShowAppointmentsDescription();
+
             sidebarPanel.Controls.Add(btnPatients);
             sidebarPanel.Controls.Add(btnDoctors);
             sidebarPanel.Controls.Add(btnAppointments);
@@ -65,17 +71,20 @@ namespace ClinicAppointmentSystemFrontend
         // CreateSidebarButton: Helper method to create styled sidebar buttons
         private Button CreateSidebarButton(string text, int top)
         {
-            return new Button
+            Button button = new Button
             {
                 Text = text,
                 Size = new Size(120, 40),
-                Location = new Point(15, top),
-                BackColor = Color.DeepSkyBlue,
-                ForeColor = Color.White,
+                Top = top,
+                Width = 130,
+                Height = 40,
                 FlatStyle = FlatStyle.Flat,
                 Font = new Font("Arial", 10, FontStyle.Regular),
                 Cursor = Cursors.Hand
             };
+            button.FlatAppearance.BorderSize = 0;
+             
+            return button;
         }
 
         // InitializeContentPanel: Configures the main content panel where descriptions are shown
@@ -124,6 +133,112 @@ namespace ClinicAppointmentSystemFrontend
                 Height = 30
             };
             this.Controls.Add(footerLabel);
+        }
+
+        // Method to show the description for "Patients"
+        private void ShowPatientsDescription()
+        {
+            Panel contentPanel = (Panel)this.Controls[2]; // Get content panel
+            contentPanel.Controls.Clear(); // Clear existing content
+
+            Label descriptionLabel = new Label
+            {
+                Text = "List of Patients will go here.\n\n" +
+                        "You can view, add, or manage patients.",
+                Font = new Font("Arial", 12),
+                ForeColor = Color.DarkSlateGray,
+                TextAlign = ContentAlignment.TopLeft,
+                Dock = DockStyle.Fill,
+                AutoSize = true,
+                Padding = new Padding(15, 10, 10, 10),
+
+                Cursor = Cursors.IBeam // Cursor change to allow text selection
+            };
+
+            descriptionLabel.Padding = new Padding(150, 10, 80, 10);
+            descriptionLabel.AutoSize = false;
+
+            contentPanel.Controls.Add(descriptionLabel);
+        }
+
+        // Method to show the description for "Doctors"
+        private void ShowDoctorsDescription()
+        {
+            Panel contentPanel = (Panel)this.Controls[2]; // Get content panel
+            contentPanel.Controls.Clear(); // Clear existing content
+
+            Label descriptionLabel = new Label
+            {
+                Text = "List of Doctors will go here.\n\n" +
+                        "You can view, add, or manage doctors.",
+                Font = new Font("Arial", 12),
+                ForeColor = Color.DarkSlateGray,
+                TextAlign = ContentAlignment.TopLeft,
+                Dock = DockStyle.Fill,
+                AutoSize = true,
+                Padding = new Padding(15, 10, 10, 10),
+
+                Cursor = Cursors.IBeam // Cursor change to allow text selection
+            };
+
+            descriptionLabel.Padding = new Padding(150, 10, 80, 10);
+            descriptionLabel.AutoSize = false;
+
+            contentPanel.Controls.Add(descriptionLabel);
+        }
+
+        // Method to show the description for "Appointments"
+        private void ShowAppointmentsDescription()
+        {
+            Panel contentPanel = (Panel)this.Controls[2]; // Get content panel
+            contentPanel.Controls.Clear(); // Clear existing content
+
+            Label descriptionLabel = new Label
+            {
+                Text = "List of Appointments will go here.\n\n" +
+                        "You can schedule, view, or manage appointments.",
+                Font = new Font("Arial", 12),
+                ForeColor = Color.DarkSlateGray,
+                TextAlign = ContentAlignment.TopLeft,
+                Dock = DockStyle.Fill,
+                AutoSize = true,
+                Padding = new Padding(15, 10, 10, 10),
+
+                Cursor = Cursors.IBeam // Cursor change to allow text selection
+            };
+
+            descriptionLabel.Padding = new Padding(150, 10, 80, 10);
+            descriptionLabel.AutoSize = false;
+
+            contentPanel.Controls.Add(descriptionLabel);
+        }
+
+        // Method to reload the default description when the title is clicked
+        private void ReloadDescription()
+        {
+            Panel contentPanel = (Panel)this.Controls[2]; // Get content panel
+            contentPanel.Controls.Clear(); // Clear existing content
+
+            Label descriptionLabel = new Label
+            {
+                Text = "Welcome to the Clinic Appointment System!\n\n" +
+                        "This system is designed to help you efficiently manage your clinic's appointments. You can easily schedule, update, and track appointments with patients and doctors.\n\n" +
+                        "In addition to managing appointments, you can also view and organize patient information, as well as doctor details, ensuring smooth operations in your clinic.\n\n" +
+                        "The system provides an easy-to-use interface for clinic staff, offering full control over managing patient records, doctor schedules, and appointment bookings.",
+                Font = new Font("Arial", 12),
+                ForeColor = Color.DarkSlateGray,
+                TextAlign = ContentAlignment.TopLeft,
+                Dock = DockStyle.Fill,
+                AutoSize = true,
+                Padding = new Padding(15, 10, 10, 10),
+
+                Cursor = Cursors.IBeam // Cursor change to allow text selection
+            };
+
+            descriptionLabel.Padding = new Padding(150, 10, 80, 10);
+            descriptionLabel.AutoSize = false;
+
+            contentPanel.Controls.Add(descriptionLabel);
         }
     }
 }
