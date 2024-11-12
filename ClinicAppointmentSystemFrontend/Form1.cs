@@ -9,7 +9,7 @@ namespace ClinicAppointmentSystemFrontend
         public Form1()
         {
             InitializeComponent();
-            CustomizeUI(); // Initialize the UI components and layout
+            CustomizeUI();
         }
 
         // CustomizeUI: Sets up the layout, colors, and controls of the form
@@ -91,19 +91,21 @@ namespace ClinicAppointmentSystemFrontend
             Label descriptionLabel = new Label
             {
                 Text = "Welcome to the Clinic Appointment System!\n\n" +
-                       "Here you can manage appointments, doctors, and patients.",
+                        "This system is designed to help you efficiently manage your clinic's appointments. You can easily schedule, update, and track appointments with patients and doctors.\n\n" +
+                        "In addition to managing appointments, you can also view and organize patient information, as well as doctor details, ensuring smooth operations in your clinic.\n\n" +
+                         "The system provides an easy-to-use interface for clinic staff, offering full control over managing patient records, doctor schedules, and appointment bookings.",
                 Font = new Font("Arial", 12),
                 ForeColor = Color.DarkSlateGray,
                 TextAlign = ContentAlignment.TopLeft,
                 Dock = DockStyle.Fill,
-                AutoSize = false,
+                AutoSize = true,
                 Padding = new Padding(15, 10, 10, 10), // Left padding to prevent text clipping
 
                 Cursor = Cursors.IBeam // Cursor change to allow text selection
             };
 
-            descriptionLabel.Padding = new Padding(150, 10, 10, 10);
-            descriptionLabel.AutoSize = true;
+            descriptionLabel.Padding = new Padding(150, 10, 80, 10);
+            descriptionLabel.AutoSize = false;
 
             contentPanel.Controls.Add(descriptionLabel);
         }
