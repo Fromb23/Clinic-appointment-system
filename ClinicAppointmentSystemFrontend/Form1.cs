@@ -41,7 +41,7 @@ namespace ClinicAppointmentSystemFrontend
             this.Controls.Add(titleLabel);
         }
 
-        // InitializeSidebar: Sets up the sidebar with buttons for navigation
+        // InitializeSidebar
         private void InitializeSidebar()
         {
             Panel sidebarPanel = new Panel
@@ -98,8 +98,13 @@ namespace ClinicAppointmentSystemFrontend
                 Dock = DockStyle.Fill,
                 AutoSize = false,
                 Padding = new Padding(15, 10, 10, 10), // Left padding to prevent text clipping
+
                 Cursor = Cursors.IBeam // Cursor change to allow text selection
             };
+
+            descriptionLabel.Padding = new Padding(150, 10, 10, 10);
+            descriptionLabel.AutoSize = true;
+
             contentPanel.Controls.Add(descriptionLabel);
         }
 
