@@ -73,7 +73,8 @@ namespace ClinicAppointmentSystemFrontend
                 BackColor = Color.DeepSkyBlue,
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat,
-                Font = new Font("Arial", 10, FontStyle.Regular)
+                Font = new Font("Arial", 10, FontStyle.Regular),
+                Cursor = Cursors.Hand
             };
         }
 
