@@ -54,19 +54,22 @@ namespace ClinicAppointmentSystemFrontend
             };
             this.Controls.Add(sidebarPanel);
 
-            // Adding buttons for "Patients", "Doctors", and "Appointments" with their positioning
-            Button btnPatients = CreateSidebarButton("Patients", 20);
-            Button btnDoctors = CreateSidebarButton("Doctors", 80);
-            Button btnAppointments = CreateSidebarButton("Appointments", 140);
+            // Adding buttons for "Add Patient", "Update Patient", "Delete Patient" and "View Patients"
+            Button btnAddPatient = CreateSidebarButton("Add Patient", 20);
+            Button btnUpdatePatient = CreateSidebarButton("Update Patient", 80);
+            Button btnDeletePatient = CreateSidebarButton("Delete Patient", 140);
+            Button btnViewPatients = CreateSidebarButton("View Patients", 200);
 
             // Attach event handlers to buttons
-            btnPatients.Click += (sender, e) => ShowPatientsDescription();
-            btnDoctors.Click += (sender, e) => ShowDoctorsDescription();
-            btnAppointments.Click += (sender, e) => ShowAppointmentsDescription();
+            btnAddPatient.Click += (sender, e) => ShowAddPatientDescription();
+            btnUpdatePatient.Click += (sender, e) => ShowUpdatePatientDescription();
+            btnDeletePatient.Click += (sender, e) => ShowDeletePatientDescription();
+            btnViewPatients.Click += (sender, e) => ShowViewPatientsDescription();
 
-            sidebarPanel.Controls.Add(btnPatients);
-            sidebarPanel.Controls.Add(btnDoctors);
-            sidebarPanel.Controls.Add(btnAppointments);
+            sidebarPanel.Controls.Add(btnAddPatient);
+            sidebarPanel.Controls.Add(btnUpdatePatient);
+            sidebarPanel.Controls.Add(btnDeletePatient);
+            sidebarPanel.Controls.Add(btnViewPatients);
         }
 
         // CreateSidebarButton: Helper method to create styled sidebar buttons
@@ -137,8 +140,86 @@ namespace ClinicAppointmentSystemFrontend
             this.Controls.Add(footerLabel);
         }
 
-        // Method to show the description for "Patients"
-        private void ShowPatientsDescription()
+        // Method to show the description for "Add Patient"
+        private void ShowAddPatientDescription()
+        {
+            Panel contentPanel = (Panel)this.Controls[2]; // Get content panel
+            contentPanel.Controls.Clear(); // Clear existing content
+
+            Label descriptionLabel = new Label
+            {
+                Text = "Add Patient details will go here.\n\n" +
+                        "You can add a new patient to the system.",
+                Font = new Font("Arial", 12),
+                ForeColor = Color.DarkSlateGray,
+                TextAlign = ContentAlignment.TopLeft,
+                Dock = DockStyle.Fill,
+                AutoSize = true,
+                Padding = new Padding(15, 10, 10, 10),
+
+                Cursor = Cursors.IBeam // Cursor change to allow text selection
+            };
+
+            descriptionLabel.Padding = new Padding(150, 10, 80, 10);
+            descriptionLabel.AutoSize = false;
+
+            contentPanel.Controls.Add(descriptionLabel);
+        }
+
+        // Method to show the description for "Update Patient"
+        private void ShowUpdatePatientDescription()
+        {
+            Panel contentPanel = (Panel)this.Controls[2]; // Get content panel
+            contentPanel.Controls.Clear(); // Clear existing content
+
+            Label descriptionLabel = new Label
+            {
+                Text = "Update Patient details will go here.\n\n" +
+                        "You can update an existing patient's information.",
+                Font = new Font("Arial", 12),
+                ForeColor = Color.DarkSlateGray,
+                TextAlign = ContentAlignment.TopLeft,
+                Dock = DockStyle.Fill,
+                AutoSize = true,
+                Padding = new Padding(15, 10, 10, 10),
+
+                Cursor = Cursors.IBeam // Cursor change to allow text selection
+            };
+
+            descriptionLabel.Padding = new Padding(150, 10, 80, 10);
+            descriptionLabel.AutoSize = false;
+
+            contentPanel.Controls.Add(descriptionLabel);
+        }
+
+        // Method to show the description for "Delete Patient"
+        private void ShowDeletePatientDescription()
+        {
+            Panel contentPanel = (Panel)this.Controls[2]; // Get content panel
+            contentPanel.Controls.Clear(); // Clear existing content
+
+            Label descriptionLabel = new Label
+            {
+                Text = "Delete Patient details will go here.\n\n" +
+                        "You can delete a patient from the system.",
+                Font = new Font("Arial", 12),
+                ForeColor = Color.DarkSlateGray,
+                TextAlign = ContentAlignment.TopLeft,
+                Dock = DockStyle.Fill,
+                AutoSize = true,
+                Padding = new Padding(15, 10, 10, 10),
+
+                Cursor = Cursors.IBeam // Cursor change to allow text selection
+            };
+
+            descriptionLabel.Padding = new Padding(150, 10, 80, 10);
+            descriptionLabel.AutoSize = false;
+
+            contentPanel.Controls.Add(descriptionLabel);
+        }
+
+        // Method to show the description for "View Patients"
+        private void ShowViewPatientsDescription()
         {
             Panel contentPanel = (Panel)this.Controls[2]; // Get content panel
             contentPanel.Controls.Clear(); // Clear existing content
@@ -146,59 +227,7 @@ namespace ClinicAppointmentSystemFrontend
             Label descriptionLabel = new Label
             {
                 Text = "List of Patients will go here.\n\n" +
-                        "You can view, add, or manage patients.",
-                Font = new Font("Arial", 12),
-                ForeColor = Color.DarkSlateGray,
-                TextAlign = ContentAlignment.TopLeft,
-                Dock = DockStyle.Fill,
-                AutoSize = true,
-                Padding = new Padding(15, 10, 10, 10),
-
-                Cursor = Cursors.IBeam // Cursor change to allow text selection
-            };
-
-            descriptionLabel.Padding = new Padding(150, 10, 80, 10);
-            descriptionLabel.AutoSize = false;
-
-            contentPanel.Controls.Add(descriptionLabel);
-        }
-
-        // Method to show the description for "Doctors"
-        private void ShowDoctorsDescription()
-        {
-            Panel contentPanel = (Panel)this.Controls[2]; // Get content panel
-            contentPanel.Controls.Clear(); // Clear existing content
-
-            Label descriptionLabel = new Label
-            {
-                Text = "List of Doctors will go here.\n\n" +
-                        "You can view, add, or manage doctors.",
-                Font = new Font("Arial", 12),
-                ForeColor = Color.DarkSlateGray,
-                TextAlign = ContentAlignment.TopLeft,
-                Dock = DockStyle.Fill,
-                AutoSize = true,
-                Padding = new Padding(15, 10, 10, 10),
-
-                Cursor = Cursors.IBeam // Cursor change to allow text selection
-            };
-
-            descriptionLabel.Padding = new Padding(150, 10, 80, 10);
-            descriptionLabel.AutoSize = false;
-
-            contentPanel.Controls.Add(descriptionLabel);
-        }
-
-        // Method to show the description for "Appointments"
-        private void ShowAppointmentsDescription()
-        {
-            Panel contentPanel = (Panel)this.Controls[2]; // Get content panel
-            contentPanel.Controls.Clear(); // Clear existing content
-
-            Label descriptionLabel = new Label
-            {
-                Text = "List of Appointments will go here.\n\n" +
-                        "You can schedule, view, or manage appointments.",
+                        "You can view all the patients in the system.",
                 Font = new Font("Arial", 12),
                 ForeColor = Color.DarkSlateGray,
                 TextAlign = ContentAlignment.TopLeft,
