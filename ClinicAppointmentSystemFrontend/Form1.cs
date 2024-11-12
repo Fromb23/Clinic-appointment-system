@@ -6,18 +6,19 @@ namespace ClinicAppointmentSystemFrontend
 {
     public partial class Form1 : Form
     {
-        // Constructor
+        // Main content panel where we'll display dynamic content
+        private Panel mainContentPanel;
+
         public Form1()
         {
             InitializeComponent();
             CustomizeForm();
         }
 
-        // Customize form layout and design
         private void CustomizeForm()
         {
             // Set form properties
-            this.Text = "Clinic Appointment System";
+            this.Text = "CLINIC APPOINTMENT SYSTEM";  // Set the title in CAPS
             this.Size = new Size(800, 600);
             this.BackColor = Color.White;
 
@@ -30,15 +31,19 @@ namespace ClinicAppointmentSystemFrontend
             };
             this.Controls.Add(headerPanel);
 
-            Label headerLabel = new Label
+            Button headerButton = new Button
             {
-                Text = "Clinic Appointment System",
+                Text = "CLINIC APPOINTMENT SYSTEM",
                 Font = new Font("Arial", 24, FontStyle.Bold),
                 ForeColor = Color.White,
+                BackColor = Color.LightSkyBlue,
+                FlatStyle = FlatStyle.Flat,
                 AutoSize = true,
                 Location = new Point(20, 30)
             };
-            headerPanel.Controls.Add(headerLabel);
+            headerButton.FlatAppearance.BorderSize = 0;
+            headerButton.Click += (s, e) => ResetForm(); // Reset form when clicked
+            headerPanel.Controls.Add(headerButton);
 
             // Footer Section
             Panel footerPanel = new Panel
@@ -63,7 +68,7 @@ namespace ClinicAppointmentSystemFrontend
             Panel navigationPanel = new Panel
             {
                 Dock = DockStyle.Left,
-                Width = 150,
+                Width = 200,
                 BackColor = Color.LightSteelBlue
             };
             this.Controls.Add(navigationPanel);
@@ -81,12 +86,15 @@ namespace ClinicAppointmentSystemFrontend
             navigationPanel.Controls.Add(btnAppointments);
 
             // Main Content Area (Panel to switch views)
-            Panel mainContentPanel = new Panel
+            mainContentPanel = new Panel
             {
                 Dock = DockStyle.Fill,
-                BackColor = Color.WhiteSmoke
+                BackColor = Color.White // Set the right panel (dialog box) to white
             };
             this.Controls.Add(mainContentPanel);
+
+            // Default View (Description)
+            ShowDefaultView();
         }
 
         // Create a button with specific properties
@@ -95,7 +103,7 @@ namespace ClinicAppointmentSystemFrontend
             Button btn = new Button
             {
                 Text = text,
-                Size = new Size(120, 40),
+                Size = new Size(160, 40),
                 Location = location,
                 BackColor = Color.DeepSkyBlue,
                 ForeColor = Color.White,
@@ -106,22 +114,85 @@ namespace ClinicAppointmentSystemFrontend
             return btn;
         }
 
+        // Show Default Content
+        private void ShowDefaultView()
+        {
+            ClearMainContentPanel(); // Clear any existing content
+
+            Label descriptionLabel = new Label
+            {
+                Text = "Welcome to the Clinic Appointment System.\n" +
+                       "This system allows you to manage patient appointments, doctor details, and more.\n" +
+                       "Use the navigation buttons on the left to manage the operations.",
+                Font = new Font("Arial", 14),
+                ForeColor = Color.Black,
+                AutoSize = true,
+                TextAlign = ContentAlignment.MiddleCenter,
+                Location = new Point(20, 50),
+                Width = mainContentPanel.Width - 40  // Ensure the text fits within the panel's width
+            };
+
+            mainContentPanel.Controls.Add(descriptionLabel);
+        }
+
         // Show Patients content
         private void ShowPatients()
         {
-            MessageBox.Show("Display Patient Information here.");
+            ClearMainContentPanel(); // Clear current content before displaying new content
+
+            Label patientsLabel = new Label
+            {
+                Text = "Manage patient information here.",
+                Font = new Font("Arial", 14),
+                ForeColor = Color.Black,
+                AutoSize = true,
+                Location = new Point(100, 50)
+            };
+            mainContentPanel.Controls.Add(patientsLabel);
         }
 
         // Show Doctors content
         private void ShowDoctors()
         {
-            MessageBox.Show("Display Doctor Information here.");
+            ClearMainContentPanel(); // Clear current content before displaying new content
+            Label doctorsLabel = new Label
+            {
+                Text = "Manage doctor details here.",
+                Font = new Font("Arial", 14),
+                ForeColor = Color.Black,
+                AutoSize = true,
+                Location = new Point(100, 50)
+            };
+            mainContentPanel.Controls.Add(doctorsLabel);
         }
 
         // Show Appointments content
         private void ShowAppointments()
         {
-            MessageBox.Show("Display Appointment Information here.");
+            ClearMainContentPanel(); // Clear current content before displaying new content
+            Label appointmentsLabel = new Label
+            {
+                Text = "Schedule and manage appointments for patients.",
+                Font = new Font("Arial", 14),
+                ForeColor = Color.Black,
+                AutoSize = true,
+                Location = new Point(100, 50)
+            };
+            mainContentPanel.Controls.Add(appointmentsLabel);
+        }
+
+        // Clear the main content panel before displaying new content
+        private void ClearMainContentPanel()
+        {
+            // This method will remove all existing controls from the main content panel
+            mainContentPanel.Controls.Clear();
+        }
+
+        // Reset the form to its original state when the title button is clicked
+        private void ResetForm()
+        {
+            // Reset the form content
+            ShowDefaultView();
         }
     }
 }
